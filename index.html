@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeMaster - Intelligent Typing Assistant</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">TypeMaster</h1>
+      <nav class="nav-tabs">
+        <button class="nav-tab active">Practice</button>
+        <button class="nav-tab">Lessons</button>
+        <button class="nav-tab">Analytics</button>
+        <button class="nav-tab">Settings</button>
+      </nav>
+    </header>
+    <main class="app-main">
+      <section id="practice-tab" class="tab-content active">
+        <div class="practice-container">
+          <div class="practice-header">
+            <h2>Adaptive Practice</h2>
+            <div class="practice-stats">
+              <div class="stat">
+                <span class="stat-label">WPM</span>
+                <span class="stat-value" id="current-wpm">0</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Accuracy</span>
+                <span class="stat-value" id="current-accuracy">0%</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Time</span>
+                <span class="stat-value" id="current-time">0:00</span>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

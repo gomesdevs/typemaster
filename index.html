@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TypeMaster - Intelligent Typing Assistant</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <title>TypeMaster - Intelligent Typing Tutor</title>
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="app-container">
     <header class="app-header">
       <h1 class="app-title">TypeMaster</h1>
       <nav class="nav-tabs">
-        <button class="nav-tab active">Practice</button>
-        <button class="nav-tab">Lessons</button>
-        <button class="nav-tab">Analytics</button>
-        <button class="nav-tab">Settings</button>
+        <button class="nav-tab active" data-tab="practice">Practice</button>
+        <button class="nav-tab" data-tab="lessons">Lessons</button>
+        <button class="nav-tab" data-tab="analytics">Analytics</button>
+        <button class="nav-tab" data-tab="settings">Settings</button>
       </nav>
     </header>
+
     <main class="app-main">
+      <!-- Practice Tab -->
       <section id="practice-tab" class="tab-content active">
         <div class="practice-container">
           <div class="practice-header">
@@ -40,9 +44,96 @@
               </div>
             </div>
           </div>
+
+          <div class="difficulty-focus" id="difficulty-focus">
+            <h3>Focus Area</h3>
+            <p>Practicing challenging characters: <span id="focus-characters"></span></p>
+          </div>
+
+          <div class="typing-area">
+            <div class="text-display" id="text-display">
+              <span class="text-to-type" id="text-to-type">Click "Start Practice" to begin your adaptive typing
+                session</span>
+            </div>
+            <textarea class="typing-input" id="typing-input" placeholder="Start typing here..." disabled></textarea>
+          </div>
+
+          <div class="practice-controls">
+            <button class="btn btn-primary" id="start-practice">Start Practice</button>
+            <button class="btn btn-secondary" id="reset-practice" disabled>Reset</button>
+            <button class="btn btn-secondary" id="generate-drill">Generate Targeted Drill</button>
+          </div>
+
+          <div class="real-time-feedback" id="real-time-feedback">
+            <div class="feedback-item">
+              <span class="feedback-label">Current Character:</span>
+              <span class="feedback-value" id="current-char">-</span>
+            </div>
+            <div class="feedback-item">
+              <span class="feedback-label">Errors This Session:</span>
+              <span class="feedback-value" id="session-errors">0</span>
+            </div>
+          </div>
+        </div>
       </section>
-    </main>
-  </div>
+
+      <section id="lessons-tab" class="tab-content">
+        <div class="lessons-container">
+          <h2>Typing Lessons</h2>
+          <div class="lessons-grid" id="lessons-grid">
+            <!-- Lessons will be dynamically generated -->
+          </div>
+        </div>
+      </section>
+      <section id="analytics-tab" class="tab-content">
+        <div class="analytics-container">
+          <h2>Progress Analytics</h2>
+
+          <div class="analytics-overview">
+            <div class="analytics-card">
+              <h3>Overall Performance</h3>
+              <div class="performance-metrics">
+                <div class="metric">
+                  <span class="metric-label">Average WPM</span>
+                  <span class="metric-value" id="avg-wpm">0</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-label">Best WPM</span>
+                  <span class="metric-value" id="best-wpm">0</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-label">Average Accuracy</span>
+                  <span class="metric-value" id="avg-accuracy">0%</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-label">Total Practice Time</span>
+                  <span class="metric-value" id="total-time">0 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="analytics-card">
+              <h3>Challenging Characters</h3>
+              <div class="challenging-analysis" id="challenging-analysis">
+                <!-- Challenging characters will be displayed here -->
+              </div>
+            </div>
+
+            <div class="progress-charts">
+              <div class="chart-container">
+                <h3>WPM Progress</h3>
+                <canvas id="wpm-chart" width="400" height="200"></canvas>
+              </div>
+              <div class="chart-container">
+                <h3>Accuracy Progress</h3>
+                <canvas id="accuracy-chart" width="400" height="200"></canvas>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
 </body>
+
 </html>

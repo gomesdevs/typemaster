@@ -85,6 +85,7 @@
           </div>
         </div>
       </section>
+
       <section id="analytics-tab" class="tab-content">
         <div class="analytics-container">
           <h2>Progress Analytics</h2>
@@ -114,20 +115,68 @@
 
             <div class="analytics-card">
               <h3>Challenging Characters</h3>
-              <div class="challenging-analysis" id="challenging-analysis">
-                <!-- Challenging characters will be displayed here -->
+              <div class="character-analysis" id="character-analysis">
+                <!-- Character difficulty analysis will be displayed here -->
               </div>
             </div>
+          </div>
 
-            <div class="progress-charts">
-              <div class="chart-container">
-                <h3>WPM Progress</h3>
-                <canvas id="wpm-chart" width="400" height="200"></canvas>
-              </div>
-              <div class="chart-container">
-                <h3>Accuracy Progress</h3>
-                <canvas id="accuracy-chart" width="400" height="200"></canvas>
-              </div>
+          <div class="progress-charts">
+            <div class="chart-container">
+              <h3>WPM Progress</h3>
+              <canvas id="wpm-chart" width="400" height="200"></canvas>
+            </div>
+            <div class="chart-container">
+              <h3>Accuracy Progress</h3>
+              <canvas id="accuracy-chart" width="400" height="200"></canvas>
+            </div>
+          </div>
+
+          <div class="session-history">
+            <h3>Recent Sessions</h3>
+            <div class="sessions-list" id="sessions-list">
+              <!-- Session history will be displayed here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings-tab" class="tab-content">
+        <div class="settings-container">
+          <h2>Settings</h2>
+
+          <div class="settings-group">
+            <h3>Practice Settings</h3>
+            <div class="setting-item">
+              <label for="practice-duration">Practice Duration (minutes)</label>
+              <select id="practice-duration">
+                <option value="1">1 minute</option>
+                <option value="2">2 minutes</option>
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+              </select>
+            </div>
+            <div class="setting-item">
+              <label for="difficulty-adaptation">Difficulty Adaptation</label>
+              <select id="difficulty-adaptation">
+                <option value="aggressive">Aggressive</option>
+                <option value="moderate">Moderate</option>
+                <option value="gentle">Gentle</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <h3>Interface Settings</h3>
+            <div class="setting-item">
+              <label for="font-size">Font Size</label>
+              <select id="font-size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="extra-large">Extra Large</option>
+              </select>
             </div>
             
           </div>

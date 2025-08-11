@@ -201,3 +201,73 @@ body {
     color: var(--dark-blue);
     font-family: 'Courier New', monospace;
 }
+/* Typing Area */
+.typing-area {
+    margin-bottom: var(--spacing-xl);
+}
+
+.text-dipslay {
+    background: var(--light-gray);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    min-height: 1200px;
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    position: relative;
+    overflow-wrap: break-word;
+}
+.text-to-type {
+    display: block;
+}
+
+.char {
+    position: relative;
+}
+
+.char.correct {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.char.incorrect {
+    background-color: var(--light-red);
+    color: var(--error-red);
+}
+
+.char.current {
+    background-color: var(--primary-blue);
+    color: white;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.typing-input {
+    width: 100%;
+    min-height: 120px;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-md);
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+.typing-input:focus{
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--light-blue);
+}
+
+.typing-input:disabled {
+    background-color: var(--light-gray);
+    cursor: not-allowed;
+}
